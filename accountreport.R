@@ -25,6 +25,7 @@ a <- 2
 for ( a in c(2:1500))
 {
   inst <- dir.list[a]
+  doc <- xbrlParse(inst)
   fct <- xbrlProcessFacts(doc)
   fct2 <- as.data.frame(toUTF8(fct[1:8000,"elementId"]))
   fct3 <- as.data.frame(toUTF8(fct[1:8000,"fact"]))
